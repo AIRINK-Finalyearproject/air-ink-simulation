@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AIR•INK — Carbon to Ink</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg-grid"></div><div class="cursor-glow"></div>
+<header>
+  <div class="brand"><span class="dot"></span><b>AIR<span>•</span>INK</b><small>LAB / 01</small></div>
+  <nav><a href="#home">01 HOME</a><a href="#plant">02 PLANT</a><a href="#control">03 SIMULATOR</a><a href="#science">04 SCIENCE</a></nav>
+  <div class="sys"><i></i> SYSTEM ONLINE <button id="theme">◐</button></div>
+</header>
+
+<section id="home" class="hero">
+ <div class="hero-text">
+  <div class="tag">FINAL YEAR PROJECT / DIGITAL EXPERIMENT</div>
+  <h1>SMOKE<br><span>→</span> CARBON<br><em>→ INK.</em></h1>
+  <p>What if a vehicle's particulate exhaust could become a usable carbon pigment? Explore the concept through an interactive digital process model.</p>
+  <div class="buttons"><button class="cta" onclick="go('plant')">ENTER THE LAB <b>↗</b></button><button class="ghost" onclick="go('control')">RUN EXPERIMENT</button></div>
+  <div class="hero-meta"><span>MODEL <b>v5.0</b></span><span>MODE <b>INTERACTIVE</b></span><span>STATUS <b id="heroStatus">READY</b></span></div>
+ </div>
+ <div class="hero-scene">
+   <div class="scene-ring r1"></div><div class="scene-ring r2"></div><div class="scene-ring r3"></div>
+   <div class="carbon"><span>C</span><small>CARBON</small></div>
+   <div class="particle pp1"></div><div class="particle pp2"></div><div class="particle pp3"></div><div class="particle pp4"></div>
+   <div class="readout top"><small>CAPTURE EFF.</small><b id="heroCap">75%</b></div>
+   <div class="readout bottom"><small>EST. INK</small><b id="heroInk">0.00 g</b></div>
+   <div class="vertical">CARBON RECOVERY / DIGITAL TWIN</div>
+ </div>
+</section>
+
+<section class="story">
+ <div><b>01</b><span>CAPTURE</span><p>Collect particulate matter from a modeled exhaust stream.</p></div>
+ <div><b>02</b><span>PURIFY</span><p>Recover a usable carbon-rich fraction after modeled losses.</p></div>
+ <div><b>03</b><span>FORMULATE</span><p>Convert recovered pigment mass into an estimated ink formulation.</p></div>
+</section>
+
+<section id="plant" class="section">
+ <div class="section-head"><div><label>02 / DIGITAL PLANT</label><h2>Watch the carbon move.</h2></div><button class="launch" id="plantRun">▶ ACTIVATE PLANT</button></div>
+ <div class="plant">
+  <div class="plant-header"><span><i></i> AIR•INK RECOVERY FACILITY</span><b id="plantState">STANDBY</b></div>
+  <div class="flowline"></div>
+  <div class="units">
+   <article class="unit" id="u0"><span class="num">01</span><h3>EXHAUST</h3><div class="machine exhaust"><div class="vehicle">▰</div><i></i><i></i><i></i></div><small>GAS STREAM</small><strong id="flowVal">500 L/min</strong></article>
+   <div class="arrow">→</div>
+   <article class="unit" id="u1"><span class="num">02</span><h3>CAPTURE</h3><div class="machine filter"><b></b><b></b><b></b><i></i></div><small>PARTICLE COLLECTION</small><strong id="capVal">75%</strong></article>
+   <div class="arrow">→</div>
+   <article class="unit" id="u2"><span class="num">03</span><h3>SEPARATE</h3><div class="machine cyclone"><div></div></div><small>RAW CARBON</small><strong id="rawVal">0.00 g</strong></article>
+   <div class="arrow">→</div>
+   <article class="unit" id="u3"><span class="num">04</span><h3>PURIFY</h3><div class="machine tank"><div></div><i></i><i></i><i></i></div><small>RECOVERY</small><strong id="purVal">85%</strong></article>
+   <div class="arrow">→</div>
+   <article class="unit final-unit" id="u4"><span class="num">05</span><h3>INK</h3><div class="machine mixer"><div></div><span class="ink-drop"></span></div><small>FORMULATED OUTPUT</small><strong id="inkVal">0.00 g</strong></article>
+  </div>
+  <div class="plant-bottom"><span>PARTICULATE <b id="pIn">0.00 g</b></span><span>CAPTURED <b id="pCap">0.00 g</b></span><span>CARBON <b id="pCarbon">0.00 g</b></span><span>INK <b id="pInk">0.00 g</b></span></div>
+ </div>
+</section>
+
+<section id="control" class="section control">
+ <div class="section-head"><div><label>03 / DIGITAL EXPERIMENT</label><h2>Design your run.</h2></div><div><button class="mini" id="demo">LOAD DEMO</button><button class="mini" id="reset">RESET</button></div></div>
+ <div class="experiment">
+  <aside class="console">
+   <div class="console-head">EXPERIMENT CONSOLE <span>LIVE</span></div>
+   <label>EXHAUST FLOW <output id="vFlow">500</output> L/min<input id="flow" type="range" min="100" max="2000" step="50" value="500"></label>
+   <label>PM CONCENTRATION <output id="vPM">0.08</output> g/m³<input id="pm" type="range" min=".01" max=".50" step=".01" value=".08"></label>
+   <label>CAPTURE EFFICIENCY <output id="vCap">75</output> %<input id="cap" type="range" min="20" max="98" value="75"></label>
+   <label>PURIFICATION RECOVERY <output id="vPur">85</output> %<input id="pur" type="range" min="40" max="99" value="85"></label>
+   <label>INK SOLIDS <output id="vSol">18</output> %<input id="sol" type="range" min="5" max="40" value="18"></label>
+   <label>RUN TIME <output id="vTime">60</output> min<input id="time" type="range" min="5" max="240" step="5" value="60"></label>
+   <button class="run" id="run">START EXPERIMENT <span>●</span></button>
+  </aside>
+  <div class="monitor">
+   <div class="monitor-top"><span>LIVE ANALYTICS</span><b id="monitorStatus">WAITING FOR INPUT</b></div>
+   <div class="big-results">
+    <div><small>INPUT PARTICULATE</small><strong id="rIn">0.00</strong><em>g</em></div>
+    <div><small>CAPTURED</small><strong id="rCaptured">0.00</strong><em>g</em></div>
+    <div><small>USABLE CARBON</small><strong id="rCarbon">0.00</strong><em>g</em></div>
+    <div class="lime-card"><small>ESTIMATED INK</small><strong id="rInk">0.00</strong><em>g</em></div>
+   </div>
+   <div class="analytics">
+    <div class="chart"><div class="chart-title">MASS FLOW <span>RELATIVE SCALE</span></div><div class="bars"><div><i id="b1"></i><span>PM</span></div><div><i id="b2"></i><span>CAPTURE</span></div><div><i id="b3"></i><span>CARBON</span></div><div><i id="b4"></i><span>INK</span></div></div></div>
+    <div class="recovery"><div class="chart-title">NET RECOVERY <b id="net">63.8%</b></div><div class="dial" id="dial"><div><strong id="dialVal">63.8</strong><span>%</span></div></div><small>capture × purification</small></div>
+   </div>
+   <div class="console-log"><span>PROCESS LOG</span><b id="log">System ready.</b></div>
+  </div>
+ </div>
+</section>
+
+<section class="section showcase">
+ <div class="section-head"><div><label>04 / PROJECT IMPACT</label><h2>The result, visualized.</h2></div></div>
+ <div class="impact">
+  <div class="impact-main"><span>USABLE CARBON RECOVERED</span><strong id="iCarbon">0.00 g</strong><p>Estimated carbon-rich material remaining after modeled capture and purification losses.</p><div class="meter"><i id="meter"></i></div></div>
+  <div><span>NET EFFICIENCY</span><strong id="iEff">63.8%</strong><p>Combined recovery of capture and purification stages.</p></div>
+  <div><span>INK FORMULATION</span><strong id="iSol">18%</strong><p>Selected solids fraction used to estimate total ink mass.</p></div>
+ </div>
+</section>
+
+<section id="science" class="science">
+ <div class="section">
+  <div class="section-head"><div><label>05 / ENGINEERING MODEL</label><h2>Behind the interface.</h2></div></div>
+  <div class="science-grid">
+   <div class="formula"><span>MASS BALANCE</span><code>m<sub>PM</sub> = Q × C<sub>PM</sub> × t</code><code>m<sub>captured</sub> = m<sub>PM</sub> × η<sub>capture</sub></code><code>m<sub>carbon</sub> = m<sub>captured</sub> × η<sub>purify</sub></code><code>m<sub>ink</sub> = m<sub>carbon</sub> ÷ f<sub>solids</sub></code></div>
+   <div class="limits"><span>SCIENTIFIC BOUNDARIES</span><ul><li>The simulator treats particulate matter as a carbon-rich fraction.</li><li>Real exhaust contains multiple chemical species and particle sizes.</li><li>Actual capture, purification and ink properties require laboratory validation.</li><li>All values shown here are illustrative estimates, not measured results.</li></ul></div>
+  </div>
+ </div>
+</section>
+
+<section class="end">
+ <div><label>AIR•INK LAB</label><h2>TURN WASTE<br>INTO <em>VALUE.</em></h2></div>
+ <div><p>Interactive engineering demonstrator<br>for a final-year project.</p><button id="export">EXPORT RUN SUMMARY ↓</button></div>
+</section>
+<footer>AIR•INK CARBON RECOVERY DIGITAL TWIN <span>2026—27 / ENGINEERING SIMULATION</span></footer>
+<script src="script.js"></script>
+</body></html>
