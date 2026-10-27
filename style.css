@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root{
+  --bg:#f4f2ec;--surface:#fff;--ink:#111;--muted:#6f706b;--line:#deddd6;
+  --accent:#d9ff3f;--accent2:#b9e600;--dark:#121310;--dark2:#1c1e18;
+  --shadow:0 20px 60px rgba(20,20,15,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Manrope,system-ui,sans-serif}
+a{text-decoration:none;color:inherit}
+.topbar{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;border-bottom:1px solid var(--line);background:rgba(244,242,236,.92);backdrop-filter:blur(12px);position:sticky;top:0;z-index:20}
+.brand{font-weight:800;letter-spacing:-1px;font-size:20px}.brand-dot{display:inline-block;width:9px;height:9px;background:var(--accent2);border-radius:50%;margin-right:8px}.brand-sub{font:500 10px "DM Mono";color:var(--muted);margin-left:7px}
+nav{display:flex;gap:28px;font-size:13px;font-weight:700;color:#575851}nav a:hover{color:#000}
+.icon-btn{border:1px solid var(--line);background:transparent;border-radius:50%;width:38px;height:38px;cursor:pointer}
+.hero{min-height:calc(100vh - 72px);display:grid;grid-template-columns:1.15fr .85fr;align-items:center;padding:7vw 8vw;gap:5vw}
+.eyebrow,.kicker{font:500 11px "DM Mono";letter-spacing:1.8px;color:#73746e}
+.hero h1{font-size:clamp(50px,7vw,100px);line-height:.93;letter-spacing:-5px;margin:20px 0 26px}.hero h1 span{color:#8eaa00}
+.hero p{max-width:650px;color:#62635e;line-height:1.8;font-size:16px}
+.hero-actions{display:flex;gap:12px;margin:32px 0}.btn{border:1px solid #111;padding:14px 20px;border-radius:10px;font-weight:800;font-size:13px;cursor:pointer;display:inline-flex;justify-content:center;align-items:center}.primary{background:#111;color:#fff}.ghost{background:transparent;color:#111}.wide{width:100%;margin-top:16px}.notice{font:11px "DM Mono";color:#85867f!important;max-width:560px!important}
+.hero-visual{display:flex;justify-content:center;align-items:center;position:relative;min-height:430px}.orb{width:320px;height:320px;border-radius:50%;background:radial-gradient(circle at 50% 50%,#20221c 0 18%,#11130f 19% 48%,transparent 49%);position:relative}.orb-core{position:absolute;inset:0;display:grid;place-items:center;color:var(--accent);font-size:54px;font-weight:800}.ring{position:absolute;border:1px solid #aab293;border-radius:50%;inset:-15px}.r2{inset:30px;border-style:dashed;animation:spin 18s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.particle{position:absolute;width:8px;height:8px;background:#1c1d19;border-radius:50%}.p1{top:5%;left:65%}.p2{bottom:12%;left:8%;width:13px;height:13px}.p3{top:58%;right:-2%}.mini-card{position:absolute;bottom:18px;right:3%;background:#fff;padding:18px 22px;border:1px solid var(--line);box-shadow:var(--shadow);border-radius:12px}.mini-card strong{display:block;font-size:25px}.mini-card span{font:10px "DM Mono";color:var(--muted)}
+.section{padding:100px 8vw}.section-heading{display:flex;justify-content:space-between;align-items:end;margin-bottom:40px}.section h2{font-size:clamp(34px,4vw,58px);letter-spacing:-2.5px;margin:10px 0 0}.text-btn{border:0;background:none;text-decoration:underline;cursor:pointer;color:#5c5d57}
+.sim-grid{display:grid;grid-template-columns:330px 1fr;gap:22px}.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}.control-panel{padding:25px}.control-panel h3,.simulation h3,.science-copy h3{margin:0 0 24px}
+label{display:block;font-size:12px;font-weight:700;margin:20px 0}label b{float:right;font:11px "DM Mono";font-weight:500}
+input[type=range]{display:block;width:100%;margin-top:12px;accent-color:#111}
+.simulation{padding:28px;overflow:hidden}.sim-top{display:flex;justify-content:space-between;align-items:center}.status{font:500 10px "DM Mono";padding:8px 11px;border-radius:20px;background:#ecece7}.status.running{background:var(--accent)}.status.done{background:#111;color:#fff}
+.pipeline{display:flex;align-items:center;justify-content:space-between;gap:7px;margin:55px 0 20px}.stage{width:112px;text-align:center;padding:15px 7px;border:1px solid var(--line);border-radius:14px;transition:.3s;background:#fafaf7}.stage.active{border-color:#111;transform:translateY(-7px);box-shadow:0 12px 28px rgba(0,0,0,.09)}.stage-icon{font-size:26px;margin-bottom:7px}.stage strong{display:block;font-size:11px}.stage small{font-size:9px;color:var(--muted)}.flow-arrow{color:#aaa;font-size:18px}
+.particle-track{height:3px;background:#e4e4dc;position:relative;margin:0 5% 35px}.particle-track:before{content:"";position:absolute;left:0;top:-4px;width:11px;height:11px;background:#111;border-radius:50%}#movingParticle{position:absolute;top:-5px;left:0;width:13px;height:13px;border-radius:50%;background:var(--accent2);opacity:0}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.metric{padding:18px;background:#f5f5ef;border-radius:12px}.metric span{display:block;font:10px "DM Mono";color:var(--muted);margin-bottom:8px}.metric strong{font-size:21px;letter-spacing:-.8px}.metric.accent{background:#111;color:#fff}.metric.accent span{color:#aaa}
+.formula{margin-top:18px;padding:15px 18px;border-top:1px dashed var(--line);font-size:10px;color:var(--muted)}.formula code{display:block;color:#111;margin-top:7px;font:12px "DM Mono"}
+.dark-section{background:var(--dark);color:#fff}.dark-section .kicker{color:#989b91}.process-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.process-card{background:var(--dark2);padding:25px;border:1px solid #303229;min-height:230px;border-radius:14px}.process-card span{font:11px "DM Mono";color:var(--accent)}.process-card h3{margin:65px 0 12px;font-size:16px}.process-card p{color:#aeb0a8;font-size:12px;line-height:1.7}
+.science-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}.science-copy{padding:30px}.science-copy p,.about p{color:var(--muted);line-height:1.8;font-size:14px}.equation-box{background:#f0f0e9;padding:13px;margin-top:9px;border-radius:8px;font:12px "DM Mono"}.science-grid>.card:last-child{padding:30px}.limits{padding-left:20px;color:var(--muted);font-size:13px;line-height:2}.callout{margin-top:22px;border-left:3px solid var(--accent2);padding:14px 16px;background:#f7f7f0;font-size:12px;line-height:1.7}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:8vw;background:#e9e8df}.about-card{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#cfcfc6;border:1px solid #cfcfc6}.about-card div{background:#f4f3ec;padding:25px}.about-card span{display:block;color:var(--muted);font:10px "DM Mono";margin-bottom:10px}.about-card strong{font-size:14px}
+footer{padding:28px 8vw;display:flex;justify-content:space-between;font:10px "DM Mono";color:#777870;border-top:1px solid var(--line)}
+@media(max-width:900px){nav{display:none}.hero,.sim-grid,.science-grid,.about{grid-template-columns:1fr}.hero{padding-top:60px}.hero-visual{min-height:350px}.process-grid{grid-template-columns:1fr 1fr}.pipeline{overflow:auto;justify-content:flex-start;padding-bottom:10px}.flow-arrow{flex:0 0 auto}.stage{flex:0 0 105px}.metrics{grid-template-columns:1fr 1fr}}
+@media(max-width:550px){.section{padding:70px 5vw}.hero{padding:60px 5vw}.hero h1{letter-spacing:-3px}.process-grid{grid-template-columns:1fr}.about-card{grid-template-columns:1fr}footer{display:block;line-height:2}}
+
+body.night{--bg:#10110e;--surface:#181a15;--ink:#f2f2eb;--muted:#a2a49a;--line:#30322c;--dark:#090a08;--dark2:#151713}
+body.night .topbar{background:rgba(16,17,14,.92)} body.night .ghost,body.night .text-btn{color:var(--ink)}
+body.night .mini-card,body.night .metric,body.night .stage{background:#1c1e19;color:var(--ink)}
+body.night .formula code,body.night .equation-box{color:var(--ink)}
+body.night .equation-box,body.night .callout{background:#1b1d18}
