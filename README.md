@@ -1,23 +1,22 @@
-# AIR-INK V5 — Showcase
+# AIR•INK V7 — Multi-page concept website
 
-A cinematic interactive digital twin for the AIR-INK final-year engineering project.
+## Pages
+- `index.html` — overview
+- `plant.html` — proposed process plant
+- `simulator.html` — experiment console
+- `science.html` — equations and limitations
+- `style.css` — shared navy / teal / orange theme
+- `simulator.js` — calculator logic
 
-Features:
-- High-impact hero and carbon visualization
-- Animated five-stage recovery plant
-- Interactive experiment console
-- Live mass balance and analytics
-- Net recovery dial
-- Impact dashboard
-- Engineering equations and scientific limitations
-- Dark/light mode
-- Exportable simulation summary
-- Responsive mobile layout
+## Fixes
+- Separate pages instead of one long page.
+- Simulator is locked until **START EXPERIMENT** is clicked.
+- Results remain blank until **CALCULATE OUTPUT** is clicked.
+- Reset and text summary export included.
+- Responsive layout for mobile.
 
-Model:
-PM input = Q × C_PM × t
-Captured = PM input × capture efficiency
-Usable carbon = Captured × purification recovery
-Estimated ink = Usable carbon ÷ ink solids fraction
+## GitHub Pages
+Upload all six files to the repository root. Replace old `index.html`, `style.css`, `README.md` and add the three new files. Keep Pages set to `main` + `/(root)`.
 
-Scientific note: this is an illustrative digital model. It does not claim that all exhaust particulate matter is pure carbon and does not replace laboratory measurements.
+## Scientific note
+This is an illustrative mass-balance model, not validated carbon recovery. Real exhaust particulate is a complex mixture and needs laboratory characterization.
